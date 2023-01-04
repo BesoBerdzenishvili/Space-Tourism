@@ -1,5 +1,5 @@
 function App() {
-  return <div></div>;
+  return <div>Space Tourism</div>;
 }
 
 export default App;
