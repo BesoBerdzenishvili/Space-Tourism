@@ -20,4 +20,7 @@ export const {
 
 export const globalStyles = globalCss({
   "*": { boxSizing: "border-box", margin: 0, padding: 0 },
+  body: { backgroundColor: "green", fontFamily: "Barlow Condensed" },
 });
+// font-family: 'Barlow Condensed', sans-serif;
+// font-family: 'Bellefair', serif;

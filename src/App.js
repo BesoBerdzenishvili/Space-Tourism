@@ -1,9 +1,10 @@
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div>
-      Space Tourism
+      <Header buttons={["Home", "Destination", "Crew", "Technology"]} />
       <Footer />
     </div>
   );
