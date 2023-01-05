@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styled } from "../stitches.config";
-// import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
 const Wrapper = styled("div", {
@@ -12,6 +12,32 @@ const Wrapper = styled("div", {
   top: 44,
   right: 0,
   left: 0,
+
+  "& a": {
+    background: "transparent",
+    padding: "36px 0",
+    marginRight: 42,
+    color: "white",
+    textDecoration: "none",
+    fontFamily: "Barlow Condensed",
+    fontSize: 19,
+    letterSpacing: 2,
+
+    "&:first-child": {
+      marginLeft: 124,
+    },
+
+    "&:hover": {
+      borderBottom: "4px solid #C0C0C0",
+      paddingBottom: 32,
+      color: "#C0C0C0",
+    },
+
+    "&:focus": {
+      borderBottom: "4px solid white",
+      paddingBottom: 32,
+    },
+  },
 });
 const Img = styled("img", {
   margin: "0 69px 0 44px",
@@ -26,49 +52,30 @@ const Nav = styled("div", {
   backdropFilter: "blur(9.3px)",
   maxWidth: 844,
   width: "100%",
-});
-const Button = styled("button", {
-  border: "none",
-  backgroundColor: "transparent",
-  marginRight: 42,
-  cursor: "pointer",
   height: 94,
-  color: "white",
-  fontFamily: "Barlow Condensed",
-  fontSize: 19,
-  letterSpacing: 2,
 
-  "&:first-child": {
-    marginLeft: 124,
-  },
-
-  "&:hover": {
-    borderBottom: "4px solid #C0C0C0",
-    height: 90,
-    color: "#C0C0C0",
-  },
-
-  "&:focus": {
-    borderBottom: "4px solid white",
-    height: 90,
-  },
+  display: "flex",
+  alignItems: "center",
 });
 
-export default function Header({ buttons }) {
+export default function Header() {
   return (
     <Wrapper>
       <Img src={logo} alt="black star in white circle" />
       <Line />
       <Nav>
-        {buttons.map((i, index) => (
-          // <Link to={`${i}`}>
-          <Button key={i}>
-            <b>
-              0{index} {i.toUpperCase()}
-            </b>
-          </Button>
-          // </Link>
-        ))}
+        <Link to={`/`}>
+          <b>00 HOME</b>
+        </Link>
+        <Link to={`/destination`}>
+          <b>01 DESTINATION</b>
+        </Link>
+        <Link to={`/crew`}>
+          <b>02 CREW</b>
+        </Link>
+        <Link to={`/technology`}>
+          <b>03 TECHNOLOGY</b>
+        </Link>
       </Nav>
     </Wrapper>
   );
