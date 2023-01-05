@@ -7,6 +7,7 @@ const Container = styled("footer", {
   left: "50%",
   transform: "translate(-50%)",
   color: "white",
+  fontSize: 12,
 });
 
 export default function Footer() {
