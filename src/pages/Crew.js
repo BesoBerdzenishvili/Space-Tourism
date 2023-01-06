@@ -70,7 +70,7 @@ const Ul = styled("article", {
 const Img = styled("img", {
   position: "relative",
   bottom: "-6vh",
-  height: "70vh",
+  height: "75vh",
 });
 
 const Ball = styled("img", {
@@ -82,10 +82,6 @@ const Ball = styled("img", {
   "&:hover": {
     backgroundColor: "#C0C0C0",
   },
-});
-
-const MemberInfo = styled("div", {
-  // margin: "62px 0",
 });
 
 export default function Crew({ crewInfo }) {
@@ -103,11 +99,11 @@ export default function Crew({ crewInfo }) {
             <span>02</span> MEET YOUR CREW
           </h5>
 
-          <MemberInfo>
+          <div>
             <h2>{crewInfo[member].role.toUpperCase()}</h2>
             <h1>{crewInfo[member].name.toUpperCase()}</h1>
             <p>{crewInfo[member].bio}</p>
-          </MemberInfo>
+          </div>
           <Ul>
             {crewNames.map((j, index) => (
               <li onClick={() => handleClick(index)} key={j}>

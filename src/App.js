@@ -18,7 +18,10 @@ function App() {
           element={<Destination planetInfo={data.destinations} />}
         />
         <Route path="/crew" element={<Crew crewInfo={data.crew} />} />
-        <Route path="/technology" element={<Technology />} />
+        <Route
+          path="/technology"
+          element={<Technology techInfo={data.technology} />}
+        />
       </Routes>
       <Footer />
     </div>
