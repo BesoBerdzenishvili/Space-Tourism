@@ -33,6 +33,10 @@ const Wrapper = styled("div", {
       paddingBottom: 32,
       color: "#C0C0C0",
     },
+
+    "& span": {
+      fontWeight: 200,
+    },
   },
 });
 const Img = styled("img", {
@@ -43,7 +47,7 @@ const Line = styled("hr", {
   zIndex: 99,
 });
 const Nav = styled("div", {
-  background: "rgba(255, 255, 255, 0.51)",
+  background: "rgba(255, 255, 255, 0.11)",
   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
   backdropFilter: "blur(9.3px)",
   maxWidth: 844,
@@ -73,6 +77,7 @@ export default function Header() {
       <Nav>
         {pages.map((i, index) => (
           <Link
+            key={i.name}
             to={`/${i.link}`}
             onClick={() => handleClick(i.name)}
             style={{
@@ -81,7 +86,7 @@ export default function Header() {
             }}
           >
             <b>
-              0{index} {i.name.toUpperCase()}
+              0{index} <span>{i.name.toUpperCase()}</span>
             </b>
           </Link>
         ))}
