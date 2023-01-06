@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "../stitches.config";
 import logo from "../assets/logo.svg";
@@ -33,11 +33,6 @@ const Wrapper = styled("div", {
       paddingBottom: 32,
       color: "#C0C0C0",
     },
-
-    "&:focus": {
-      borderBottom: "4px solid white",
-      paddingBottom: 32,
-    },
   },
 });
 const Img = styled("img", {
@@ -60,23 +55,36 @@ const Nav = styled("div", {
 });
 
 export default function Header() {
+  const pages = [
+    { name: "Home", link: "" },
+    { name: "Destination", link: "destination" },
+    { name: "Crew", link: "crew" },
+    { name: "Technology", link: "technology" },
+  ];
+  const [page, setPage] = useState("Home");
+  const handleClick = (pageName) => {
+    setPage(pageName);
+  };
+
   return (
     <Wrapper>
       <Img src={logo} alt="black star in white circle" />
       <Line />
       <Nav>
-        <Link to={`/`}>
-          <b>00 HOME</b>
-        </Link>
-        <Link to={`/destination`}>
-          <b>01 DESTINATION</b>
-        </Link>
-        <Link to={`/crew`}>
-          <b>02 CREW</b>
-        </Link>
-        <Link to={`/technology`}>
-          <b>03 TECHNOLOGY</b>
-        </Link>
+        {pages.map((i, index) => (
+          <Link
+            to={`/${i.link}`}
+            onClick={() => handleClick(i.name)}
+            style={{
+              borderBottom: i.name === page && "4px solid white",
+              paddingBottom: i.name === page && 32,
+            }}
+          >
+            <b>
+              0{index} {i.name.toUpperCase()}
+            </b>
+          </Link>
+        ))}
       </Nav>
     </Wrapper>
   );
