@@ -36,6 +36,7 @@ const Article = styled("article", {
     fontFamily: "Bellefair",
     fontSize: 128,
     margin: "44px 0 57px 0",
+    fontWeight: 400,
   },
   "& p": {
     lineHeight: 2,
