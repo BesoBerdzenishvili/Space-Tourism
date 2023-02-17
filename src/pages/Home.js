@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styled } from "../stitches.config";
 import bgImg from "../assets/background-home.jpg";
 import ExploreBtn from "../components/ExploreBtn";
@@ -50,7 +51,9 @@ export default function Home() {
             world experience!
           </p>
         </Article>
-        <ExploreBtn />
+        <Link to={"/destination"}>
+          <ExploreBtn />
+        </Link>
       </Section>
     </Wrapper>
   );
