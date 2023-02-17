@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from "../stitches.config";
 import logo from "../assets/logo.svg";
 
@@ -41,6 +41,7 @@ const Wrapper = styled("div", {
 });
 const Img = styled("img", {
   margin: "0 69px 0 44px",
+  cursor: "pointer",
 });
 const Line = styled("hr", {
   width: 474,
@@ -70,9 +71,19 @@ export default function Header() {
     setPage(pageName);
   };
 
+  const navigate = useNavigate();
+
+  function handleNavigation() {
+    navigate("/");
+  }
+
   return (
     <Wrapper>
-      <Img src={logo} alt="black star in white circle" />
+      <Img
+        src={logo}
+        alt="black star in white circle"
+        onClick={handleNavigation}
+      />
       <Line />
       <Nav>
         {pages.map((i, index) => (
